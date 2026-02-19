@@ -1,42 +1,50 @@
 /*
  * EDUCA+ - Paleta de Cores Customizada
- * Baseada na cor principal: #eed001 (Amarelo)
+ * Baseada na logo oficial: Amarelo, Azul claro, Vermelho, Verde
  *
- * Esta paleta foi criada seguindo princípios de UX/UI:
- * - Contraste adequado para acessibilidade (WCAG AA)
- * - Harmonia cromática entre cores
- * - Hierarquia visual clara
+ * Cores extraídas da logo:
+ * - Amarelo (primário): #F4D03F
+ * - Azul claro: #5DADE2
+ * - Vermelho: #E53935
+ * - Verde: #43A047
  */
 
 /* ============================================
    VARIÁVEIS CSS - PALETA EDUCA+
    ============================================ */
 :root {
-  /* Cores Principais */
-  --primary: #eed001;           /* Amarelo EDUCA+ - Cor da marca */
-  --primary-dark: #d4b800;      /* Amarelo escuro - Para hover */
-  --primary-light: #fff176;     /* Amarelo claro - Para destaques suaves */
+  /* Cores Principais - Amarelo (cor dominante da marca) */
+  --primary: #F4D03F;
+  --primary-dark: #D4AC0D;
+  --primary-light: #FEF9E7;
 
-  /* Cores Secundárias */
-  --secondary: #1e3a5f;         /* Azul marinho - Confiança e seriedade */
-  --secondary-dark: #152a45;    /* Azul escuro - Para hover */
-  --secondary-light: #2d4a6f;   /* Azul médio - Para variações */
+  /* Cores Secundárias - Azul claro (alegre e infantil) */
+  --secondary: #5DADE2;
+  --secondary-dark: #2E86C1;
+  --secondary-light: #85C1E9;
+
+  /* Cores de Destaque */
+  --accent-red: #E53935;
+  --accent-red-dark: #C62828;
+  --accent-green: #43A047;
+  --accent-green-dark: #2E7D32;
 
   /* Cores de Texto */
-  --text-on-primary: #1e3a5f;   /* Texto sobre fundo amarelo */
-  --text-on-secondary: #ffffff; /* Texto sobre fundo azul */
-  --text-body: #444444;         /* Texto geral */
-  --text-muted: #6c757d;        /* Texto secundário */
+  --text-on-primary: #333333;
+  --text-on-secondary: #ffffff;
+  --text-body: #444444;
+  --text-muted: #6c757d;
+  --text-heading: #2C3E50;
 
   /* Cores de Background */
-  --bg-light: #f8f9fa;          /* Fundo claro */
-  --bg-white: #ffffff;          /* Fundo branco */
+  --bg-light: #f8f9fa;
+  --bg-white: #ffffff;
 
   /* Cores de Sucesso/Alerta */
-  --success: #28a745;
-  --warning: #eed001;
-  --danger: #dc3545;
-  --info: #1e3a5f;
+  --success: #43A047;
+  --warning: #F4D03F;
+  --danger: #E53935;
+  --info: #5DADE2;
 }
 
 /* ============================================
@@ -45,16 +53,14 @@
 
 /* --- Links --- */
 a {
-  color: var(--secondary);
+  color: var(--secondary-dark);
 }
 
 a:hover {
-  color: var(--primary-dark);
+  color: var(--accent-red);
 }
 
-/* --- Botões Primários ---
-   Justificativa: Botões amarelos com texto escuro garantem
-   destaque visual e chamada para ação clara */
+/* --- Botões Primários (Amarelo) --- */
 .btn-primary {
   color: var(--text-on-primary) !important;
   background-color: var(--primary) !important;
@@ -67,7 +73,7 @@ a:hover {
   color: var(--text-on-primary) !important;
   background-color: var(--primary-dark) !important;
   border-color: var(--primary-dark) !important;
-  box-shadow: 0 0 0 0.2rem rgba(238, 208, 1, 0.4) !important;
+  box-shadow: 0 0 0 0.2rem rgba(244, 208, 63, 0.4) !important;
 }
 
 .btn-primary:active,
@@ -84,13 +90,12 @@ a:hover {
   opacity: 0.65;
 }
 
-/* --- Botões Secundários ---
-   Justificativa: Azul marinho transmite profissionalismo
-   e cria contraste com o amarelo */
+/* --- Botões Secundários (Azul claro) --- */
 .btn-secondary {
   color: var(--text-on-secondary) !important;
   background-color: var(--secondary) !important;
   border-color: var(--secondary) !important;
+  font-weight: 600;
 }
 
 .btn-secondary:hover,
@@ -98,24 +103,23 @@ a:hover {
   color: var(--text-on-secondary) !important;
   background-color: var(--secondary-dark) !important;
   border-color: var(--secondary-dark) !important;
-  box-shadow: 0 0 0 0.2rem rgba(30, 58, 95, 0.4) !important;
+  box-shadow: 0 0 0 0.2rem rgba(93, 173, 226, 0.4) !important;
 }
 
 /* --- Botão Outline Primário --- */
 .btn-outline-primary {
-  color: var(--primary) !important;
+  color: var(--primary-dark) !important;
   border-color: var(--primary) !important;
 }
 
-.btn-outline-primary:hover {
+.btn-outline-primary:hover,
+.btn-outline-primary.active {
   color: var(--text-on-primary) !important;
   background-color: var(--primary) !important;
   border-color: var(--primary) !important;
 }
 
-/* --- Background Primário ---
-   Justificativa: Headers e seções de destaque em amarelo
-   criam identidade visual forte */
+/* --- Background Primário (Amarelo) --- */
 .bg-primary {
   background-color: var(--primary) !important;
 }
@@ -132,9 +136,7 @@ a:hover {
   color: var(--text-on-primary) !important;
 }
 
-/* --- Background Secundário ---
-   Justificativa: Footer e seções informativas em azul
-   equilibram a página e transmitem seriedade */
+/* --- Background Secundário (Azul claro) --- */
 .bg-secondary {
   background-color: var(--secondary) !important;
 }
@@ -158,14 +160,12 @@ a:hover {
 }
 
 /* ============================================
-   COMPONENTES ESPECÍFICOS DO TEMPLATE
+   COMPONENTES ESPECÍFICOS
    ============================================ */
 
-/* --- Navbar ---
-   Justificativa: Navbar em fundo claro com logo colorido
-   mantém a navegação limpa e profissional */
+/* --- Navbar --- */
 .navbar-brand .text-primary {
-  color: var(--primary) !important;
+  color: var(--primary-dark) !important;
 }
 
 .navbar-brand .text-secondary {
@@ -174,23 +174,19 @@ a:hover {
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--primary) !important;
+  color: var(--secondary) !important;
 }
 
-/* --- Section Title (etiquetas de seção) ---
-   Justificativa: Etiquetas em amarelo destacam os títulos
-   e criam consistência visual */
+/* --- Section Title (etiquetas de seção) --- */
 .section-title span {
   background-color: var(--primary) !important;
   color: var(--text-on-primary) !important;
 }
 
-/* --- Cards ---
-   Justificativa: Bordas superiores em amarelo criam
-   um toque de cor sem sobrecarregar */
+/* --- Cards --- */
 .card .border-top,
 .bg-light.border-top {
-  border-top-color: var(--primary) !important;
+  border-top-color: var(--secondary) !important;
 }
 
 /* --- Ícones --- */
@@ -203,9 +199,7 @@ h4.text-primary,
   color: var(--primary) !important;
 }
 
-/* --- Footer ---
-   Justificativa: Footer em azul escuro cria âncora visual
-   e fecha a página com profissionalismo */
+/* --- Footer (Azul claro - alegre e acolhedor) --- */
 .bg-secondary .text-primary {
   color: var(--primary) !important;
 }
@@ -214,9 +208,12 @@ h4.text-primary,
   color: var(--primary) !important;
 }
 
-/* --- Formulários ---
-   Justificativa: Campos de formulário em fundo amarelo
-   destacam as áreas de interação */
+/* Footer com gradiente para profundidade */
+.container-fluid.bg-secondary.text-white.mt-5 {
+  background: linear-gradient(180deg, var(--secondary) 0%, var(--secondary-dark) 100%) !important;
+}
+
+/* --- Formulários --- */
 .bg-primary input.form-control,
 .bg-primary select.custom-select {
   border: 2px solid var(--primary-dark) !important;
@@ -225,7 +222,7 @@ h4.text-primary,
 .bg-primary input.form-control:focus,
 .bg-primary select.custom-select:focus {
   border-color: var(--secondary) !important;
-  box-shadow: 0 0 0 0.2rem rgba(30, 58, 95, 0.25) !important;
+  box-shadow: 0 0 0 0.2rem rgba(93, 173, 226, 0.25) !important;
 }
 
 /* --- Badges --- */
@@ -234,43 +231,41 @@ h4.text-primary,
   color: var(--text-on-primary) !important;
 }
 
-/* --- Team Section Social Icons ---
-   Justificativa: Ícones em amarelo no hover criam
-   interatividade visual */
+/* --- Team Section Social Icons --- */
 .team-social a:hover {
-  background-color: var(--primary) !important;
-  border-color: var(--primary) !important;
-  color: var(--text-on-primary) !important;
+  background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+  color: #fff !important;
 }
 
 /* --- Testimonial Carousel --- */
 .owl-carousel .owl-dot.active span {
-  background-color: var(--primary) !important;
+  background-color: var(--secondary) !important;
 }
 
 /* --- Back to Top Button --- */
 .back-to-top {
-  background-color: var(--primary) !important;
-  border-color: var(--primary) !important;
-  color: var(--text-on-primary) !important;
+  background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+  color: #fff !important;
 }
 
 .back-to-top:hover {
-  background-color: var(--primary-dark) !important;
-  border-color: var(--primary-dark) !important;
+  background-color: var(--secondary-dark) !important;
+  border-color: var(--secondary-dark) !important;
 }
 
 /* --- Dropdown Menu --- */
 .dropdown-item:hover,
 .dropdown-item:focus,
 .dropdown-item.active {
-  background-color: var(--primary) !important;
+  background-color: var(--primary-light) !important;
   color: var(--text-on-primary) !important;
 }
 
 /* --- List Group --- */
 .list-group-item a:hover {
-  color: var(--primary) !important;
+  color: var(--secondary) !important;
 }
 
 /* --- Card Footer Info --- */
@@ -279,32 +274,89 @@ h4.text-primary,
 }
 
 /* ============================================
+   DETALHES COM VERMELHO E VERDE (da logo)
+   ============================================ */
+
+/* Ícone de check verde */
+.fa-check.text-primary {
+  color: var(--accent-green) !important;
+}
+
+.fa-check.text-success {
+  color: var(--accent-green) !important;
+}
+
+/* Botão Matricule-se na navbar (vermelho = urgência) */
+.navbar .btn-primary {
+  background-color: var(--accent-red) !important;
+  border-color: var(--accent-red) !important;
+  color: #fff !important;
+  border-radius: 25px;
+}
+
+.navbar .btn-primary:hover {
+  background-color: var(--accent-red-dark) !important;
+  border-color: var(--accent-red-dark) !important;
+  color: #fff !important;
+}
+
+/* Detalhe vermelho na borda superior dos cards de facilidades */
+.d-flex.bg-light.shadow-sm.border-top {
+  border-top: 3px solid var(--accent-red) !important;
+}
+
+/* Detalhe verde nos cards de turmas */
+.card.border-0.bg-light.shadow-sm .btn-primary {
+  background-color: var(--accent-green) !important;
+  border-color: var(--accent-green) !important;
+  color: #fff !important;
+  border-radius: 25px;
+}
+
+.card.border-0.bg-light.shadow-sm .btn-primary:hover {
+  background-color: var(--accent-green-dark) !important;
+  border-color: var(--accent-green-dark) !important;
+}
+
+/* ============================================
    AJUSTES DE LEGIBILIDADE E ACESSIBILIDADE
    ============================================ */
 
-/* Garantir contraste adequado em fundos amarelos */
+/* Contraste em fundos amarelos */
 .bg-primary .display-3,
 .bg-primary .display-4,
 .bg-primary h1,
 .bg-primary h2,
 .bg-primary h3,
 .bg-primary h4 {
-  color: var(--text-on-primary) !important;
+  color: var(--text-heading) !important;
   text-shadow: none;
 }
 
-/* Links no header amarelo */
+/* Botão azul no header amarelo */
 .bg-primary a.btn-secondary {
   background-color: var(--secondary) !important;
-  color: var(--text-on-secondary) !important;
+  color: #fff !important;
+  border-radius: 25px;
 }
 
 .bg-primary a.btn-secondary:hover {
   background-color: var(--secondary-dark) !important;
 }
 
+/* Ícones no footer - amarelo vibrante sobre azul */
+.bg-secondary .btn-outline-primary {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.bg-secondary .btn-outline-primary:hover {
+  background-color: var(--primary) !important;
+  color: var(--text-on-primary) !important;
+}
+
 /* ============================================
-   EFEITOS E TRANSIÇÕES SUAVES
+   EFEITOS E TRANSIÇÕES
    ============================================ */
 
 .btn-primary,
@@ -316,22 +368,109 @@ a,
 }
 
 /* ============================================
-   AJUSTES PARA O HEADER PRINCIPAL
+   HEADER PRINCIPAL
    ============================================ */
 
-/* Header com gradiente sutil para mais profundidade */
+/* Header com gradiente amarelo */
 .container-fluid.bg-primary.px-0.px-md-5.mb-5 {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
 }
 
-/* Botão "Saiba Mais" no header */
+/* Botão CTA no header */
 .bg-primary .btn-secondary {
+  background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+  color: #fff !important;
+  border-radius: 25px;
+  font-weight: 700;
+}
+
+.bg-primary .btn-secondary:hover {
+  background-color: var(--secondary-dark) !important;
+  border-color: var(--secondary-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(93, 173, 226, 0.4);
+}
+
+/* ============================================
+   PAGE HEADER (breadcrumb pages)
+   ============================================ */
+
+/* Breadcrumb headers com azul claro em vez de amarelo */
+.container-fluid.bg-primary.mb-5:not(.px-0) {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%) !important;
+}
+
+.container-fluid.bg-primary.mb-5:not(.px-0) h3,
+.container-fluid.bg-primary.mb-5:not(.px-0) p,
+.container-fluid.bg-primary.mb-5:not(.px-0) a {
+  color: #fff !important;
+}
+
+/* ============================================
+   RESERVA SECTION
+   ============================================ */
+
+/* Card header de reserva em azul */
+.card-header.bg-secondary {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%) !important;
+}
+
+/* ============================================
+   MELHORIAS GERAIS DE UX
+   ============================================ */
+
+/* Sombras mais suaves nos cards */
+.shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Cards com hover sutil */
+.card.border-0.bg-light.shadow-sm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+  transition: all 0.3s ease;
+}
+
+.card.border-0.bg-light.shadow-sm {
+  transition: all 0.3s ease;
+}
+
+/* Facilities cards com hover */
+.d-flex.bg-light.shadow-sm.border-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease;
+}
+
+.d-flex.bg-light.shadow-sm.border-top {
+  transition: all 0.3s ease;
+}
+
+/* Headings com cor mais rica */
+h1, h2, h3, h4 {
+  color: var(--text-heading);
+}
+
+/* Contact page icons - cores da logo alternadas */
+.contact-form + .col-lg-5 .fa-map-marker-alt,
+.col-lg-5 .bg-primary.rounded-circle .fa-map-marker-alt {
+  color: var(--accent-red) !important;
+}
+
+/* Portfolio filter buttons mais bonitos */
+#portfolio-flters li {
+  border-radius: 25px !important;
+  font-weight: 600;
+}
+
+#portfolio-flters li.active {
   background-color: var(--secondary) !important;
   border-color: var(--secondary) !important;
   color: #fff !important;
 }
 
-.bg-primary .btn-secondary:hover {
-  background-color: var(--secondary-light) !important;
-  border-color: var(--secondary-light) !important;
+#portfolio-flters li:hover:not(.active) {
+  background-color: var(--primary-light) !important;
+  border-color: var(--primary) !important;
 }
