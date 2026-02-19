@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<Base title="Contato - Reforço Escolar EDUCA+" activePage="contact">
+
+  <PageHeader title="Entre em Contato" />
+
+  <!-- Contact Start -->
+  <div class="container-fluid pt-5">
+    <div class="container">
+      <div class="text-center pb-2">
+        <p class="section-title px-5">
+          <span class="px-2">Fale Conosco</span>
+        </p>
+        <h1 class="mb-4">Entre em Contato para Qualquer Dúvida</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-7 mb-5">
+          <div class="contact-form">
+            <div id="success"></div>
+            <form name="sentMessage" id="contactForm" novalidate="novalidate">
+              <div class="control-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Seu Nome"
+                  required="required"
+                  data-validation-required-message="Por favor, insira seu nome"
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="control-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Seu E-mail"
+                  required="required"
+                  data-validation-required-message="Por favor, insira seu e-mail"
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="control-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subject"
+                  placeholder="Assunto"
+                  required="required"
+                  data-validation-required-message="Por favor, insira um assunto"
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="control-group">
+                <textarea
+                  class="form-control"
+                  rows="6"
+                  id="message"
+                  placeholder="Mensagem"
+                  required="required"
+                  data-validation-required-message="Por favor, insira sua mensagem"
+                ></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+              <div>
+                <button
+                  class="btn btn-primary py-2 px-4"
+                  type="submit"
+                  id="sendMessageButton"
+                >
+                  Enviar Mensagem
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-5 mb-5">
+          <p>
+            Entre em contato conosco para tirar dúvidas, agendar uma visita
+            ou saber mais sobre nossas turmas e metodologia. Estamos à
+            disposição para ajudar no desenvolvimento do seu filho.
+          </p>
+          <div class="d-flex">
+            <i
+              class="fa fa-map-marker-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+              style="width: 45px; height: 45px"
+            ></i>
+            <div class="pl-3">
+              <h5>Endereço</h5>
+              <p>R. São Braz, 19 - Água Fria, Recife - PE, 52111-460, Brasil</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <i
+              class="fa fa-envelope d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+              style="width: 45px; height: 45px"
+            ></i>
+            <div class="pl-3">
+              <h5>E-mail</h5>
+              <p>teste@gmail.com</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <i
+              class="fa fa-phone-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+              style="width: 45px; height: 45px"
+            ></i>
+            <div class="pl-3">
+              <h5>Telefone</h5>
+              <p>+55 81 98304-2893</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <i
+              class="far fa-clock d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+              style="width: 45px; height: 45px"
+            ></i>
+            <div class="pl-3">
+              <h5>Horário</h5>
+              <strong>Seg-Sex:</strong>
+              <p class="m-0">08:00 - 18:30</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contact End -->
+
+</Base>

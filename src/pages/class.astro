@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ClassCards from '../components/ClassCards.astro';
+import Registration from '../components/Registration.astro';
+---
+
+<Base title="Turmas - Reforço Escolar EDUCA+" activePage="class">
+
+  <PageHeader title="Nossas Turmas" />
+
+  <ClassCards sectionTitle="Turmas Populares" sectionHeading="Turmas para Seus Filhos" />
+
+  <Registration
+    description="Garanta a vaga do seu filho na EDUCA+. Oferecemos turmas reduzidas para um acompanhamento personalizado e eficiente no desenvolvimento de cada criança."
+    features={[
+      { bold: "Turmas reduzidas", text: " para melhor acompanhamento" },
+      { bold: "Professores qualificados", text: " e dedicados" },
+      { bold: "Metodologia lúdica", text: " e personalizada" },
+    ]}
+  />
+
+</Base>

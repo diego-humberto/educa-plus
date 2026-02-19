@@ -1,0 +1,87 @@
+---
+interface Props {
+  description?: string;
+  features?: { bold: string; text: string }[];
+}
+
+const { description, features } = Astro.props;
+
+const defaultDescription = "Garanta o futuro do seu filho matriculando-o em nosso reforço. Oferecemos turmas com vagas limitadas para garantir atenção individualizada e um ambiente de aprendizado de qualidade.";
+const defaultFeatures = [
+  { bold: "", text: "Turmas com número reduzido de alunos" },
+  { bold: "", text: "Acompanhamento pedagógico personalizado" },
+  { bold: "", text: "Comunicação constante com os pais" },
+];
+
+const desc = description || defaultDescription;
+const feats = features || defaultFeatures;
+---
+
+<div class="container-fluid py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7 mb-5 mb-lg-0">
+        <p class="section-title pr-5">
+          <span class="pr-2">Reserve uma Vaga</span>
+        </p>
+        <h1 class="mb-4">Reserve uma Vaga Para Seu Filho</h1>
+        <p>{desc}</p>
+        <ul class="list-inline m-0">
+          {feats.map((f) => (
+            <li class="py-2">
+              <i class="fa fa-check text-success mr-3"></i>
+              {f.bold ? <strong>{f.bold}</strong> : null}{f.text}
+            </li>
+          ))}
+        </ul>
+        <a href="" class="btn btn-primary mt-4 py-2 px-4">Reservar Agora</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="card border-0">
+          <div class="card-header bg-secondary text-center p-4">
+            <h1 class="text-white m-0">Reserve uma Vaga</h1>
+          </div>
+          <div class="card-body rounded-bottom bg-primary p-5">
+            <form>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control border-0 p-4"
+                  placeholder="Seu Nome"
+                  required="required"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control border-0 p-4"
+                  placeholder="Seu Email"
+                  required="required"
+                />
+              </div>
+              <div class="form-group">
+                <select
+                  class="custom-select border-0 px-4"
+                  style="height: 47px"
+                >
+                  <option selected>Selecione uma Turma</option>
+                  <option value="1">Turma 1</option>
+                  <option value="2">Turma 2</option>
+                  <option value="3">Turma 3</option>
+                </select>
+              </div>
+              <div>
+                <button
+                  class="btn btn-secondary btn-block border-0 py-3"
+                  type="submit"
+                >
+                  Reservar Agora
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

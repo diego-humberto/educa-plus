@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import Facilities from '../components/Facilities.astro';
+import ClassCards from '../components/ClassCards.astro';
+import Registration from '../components/Registration.astro';
+import TeamSection from '../components/TeamSection.astro';
+import Testimonials from '../components/Testimonials.astro';
+---
+
+<Base title="Reforço Escolar EDUCA+" activePage="index">
+
+  <!-- Header Start -->
+  <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
+    <div class="row align-items-center px-3">
+      <div class="col-lg-6 text-center text-lg-left">
+        <h4 class="text-white mb-4 mt-5 mt-lg-0">Apoio Pedagógico • Turma Kids</h4>
+        <h1 class="display-3 font-weight-bold text-white">
+          <span style="font-family: 'Handlee', cursive;">Reforço Escolar</span> e Alfabetização com <span style="color: #1e3a5f;">Afeto</span>
+        </h1>
+        <p class="text-white mb-4">
+          Do Infantil ao 5º ano. Ajudamos seu filho com alfabetização, revisão
+          para provas, trabalhos escolares e leitura diária. Temos também a
+          <strong>Turma Kids (1 a 4 anos)</strong> com foco em desenvolvimento lúdico.
+        </p>
+        <a href="https://wa.me/5581984245851?text=Olá!%20Quero%20saber%20se%20ainda%20há%20vagas%20disponíveis%20para%20matrícula." target="_blank" class="btn btn-secondary mt-1 py-3 px-5">Quero Agendar uma Aula</a>
+      </div>
+      <div class="col-lg-6 text-center text-lg-right">
+        <img class="img-fluid mt-5" src="/img/header.png" alt="" />
+      </div>
+    </div>
+  </div>
+  <!-- Header End -->
+
+  <!-- Facilities -->
+  <Facilities />
+
+  <!-- About Start -->
+  <div class="container-fluid py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5">
+          <img
+            class="img-fluid rounded mb-5 mb-lg-0"
+            src="/img/reforco-principal.webp"
+            alt="Reforço Escolar EDUCA+"
+          />
+        </div>
+        <div class="col-lg-7">
+          <p class="section-title pr-5">
+            <span class="pr-2">Por Que Nos Escolher?</span>
+          </p>
+          <h1 class="mb-4">Um ambiente acolhedor para seu filho crescer</h1>
+          <p>
+            Sabemos que a rotina escolar pode ser cansativa. Por isso, criamos
+            um espaço seguro e estimulante onde seu filho recebe o apoio
+            pedagógico que precisa, enquanto se diverte e socializa. Da
+            estimulação na Turma Kids ao foco nos estudos do 5º ano, aqui seu
+            filho é tratado com prioridade.
+          </p>
+          <div class="row pt-2 pb-4">
+            <div class="col-12">
+              <ul class="list-inline m-0">
+                <li class="py-2 border-top border-bottom">
+                  <i class="fa fa-check text-primary mr-3"></i><strong>Turmas Separadas:</strong>
+                  Kids (1-4 anos) e Fundamental em espaços adequados.
+                </li>
+                <li class="py-2 border-bottom">
+                  <i class="fa fa-check text-primary mr-3"></i><strong>Tranquilidade para os Pais:</strong>
+                  Tarefas e trabalhos escolares feitos com supervisão.
+                </li>
+                <li class="py-2 border-bottom">
+                  <i class="fa fa-check text-primary mr-3"></i><strong>Desenvolvimento Lúdico:</strong>
+                  Aprender brincando para os menores.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://wa.me/5581984245851?text=Olá!%20Gostaria%20de%20conhecer%20o%20espaço%20do%20EDUCA%2B." target="_blank" class="btn btn-primary mt-2 py-2 px-4">Conhecer o Espaço</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About End -->
+
+  <!-- Classes -->
+  <ClassCards />
+
+  <!-- Registration -->
+  <Registration />
+
+  <!-- Team -->
+  <TeamSection />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+</Base>

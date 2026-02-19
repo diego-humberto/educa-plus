@@ -1,0 +1,337 @@
+/*
+ * EDUCA+ - Paleta de Cores Customizada
+ * Baseada na cor principal: #eed001 (Amarelo)
+ *
+ * Esta paleta foi criada seguindo princípios de UX/UI:
+ * - Contraste adequado para acessibilidade (WCAG AA)
+ * - Harmonia cromática entre cores
+ * - Hierarquia visual clara
+ */
+
+/* ============================================
+   VARIÁVEIS CSS - PALETA EDUCA+
+   ============================================ */
+:root {
+  /* Cores Principais */
+  --primary: #eed001;           /* Amarelo EDUCA+ - Cor da marca */
+  --primary-dark: #d4b800;      /* Amarelo escuro - Para hover */
+  --primary-light: #fff176;     /* Amarelo claro - Para destaques suaves */
+
+  /* Cores Secundárias */
+  --secondary: #1e3a5f;         /* Azul marinho - Confiança e seriedade */
+  --secondary-dark: #152a45;    /* Azul escuro - Para hover */
+  --secondary-light: #2d4a6f;   /* Azul médio - Para variações */
+
+  /* Cores de Texto */
+  --text-on-primary: #1e3a5f;   /* Texto sobre fundo amarelo */
+  --text-on-secondary: #ffffff; /* Texto sobre fundo azul */
+  --text-body: #444444;         /* Texto geral */
+  --text-muted: #6c757d;        /* Texto secundário */
+
+  /* Cores de Background */
+  --bg-light: #f8f9fa;          /* Fundo claro */
+  --bg-white: #ffffff;          /* Fundo branco */
+
+  /* Cores de Sucesso/Alerta */
+  --success: #28a745;
+  --warning: #eed001;
+  --danger: #dc3545;
+  --info: #1e3a5f;
+}
+
+/* ============================================
+   SOBRESCREVER CORES DO BOOTSTRAP
+   ============================================ */
+
+/* --- Links --- */
+a {
+  color: var(--secondary);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* --- Botões Primários ---
+   Justificativa: Botões amarelos com texto escuro garantem
+   destaque visual e chamada para ação clara */
+.btn-primary {
+  color: var(--text-on-primary) !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  font-weight: 600;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  color: var(--text-on-primary) !important;
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+  box-shadow: 0 0 0 0.2rem rgba(238, 208, 1, 0.4) !important;
+}
+
+.btn-primary:active,
+.btn-primary.active {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+  color: var(--text-on-primary) !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  opacity: 0.65;
+}
+
+/* --- Botões Secundários ---
+   Justificativa: Azul marinho transmite profissionalismo
+   e cria contraste com o amarelo */
+.btn-secondary {
+  color: var(--text-on-secondary) !important;
+  background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: var(--text-on-secondary) !important;
+  background-color: var(--secondary-dark) !important;
+  border-color: var(--secondary-dark) !important;
+  box-shadow: 0 0 0 0.2rem rgba(30, 58, 95, 0.4) !important;
+}
+
+/* --- Botão Outline Primário --- */
+.btn-outline-primary {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.btn-outline-primary:hover {
+  color: var(--text-on-primary) !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+/* --- Background Primário ---
+   Justificativa: Headers e seções de destaque em amarelo
+   criam identidade visual forte */
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary h4,
+.bg-primary h5,
+.bg-primary h6,
+.bg-primary p,
+.bg-primary span,
+.bg-primary .text-white {
+  color: var(--text-on-primary) !important;
+}
+
+/* --- Background Secundário ---
+   Justificativa: Footer e seções informativas em azul
+   equilibram a página e transmitem seriedade */
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+
+/* --- Textos Coloridos --- */
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+/* --- Bordas --- */
+.border-primary {
+  border-color: var(--primary) !important;
+}
+
+.border-secondary {
+  border-color: var(--secondary) !important;
+}
+
+/* ============================================
+   COMPONENTES ESPECÍFICOS DO TEMPLATE
+   ============================================ */
+
+/* --- Navbar ---
+   Justificativa: Navbar em fundo claro com logo colorido
+   mantém a navegação limpa e profissional */
+.navbar-brand .text-primary {
+  color: var(--primary) !important;
+}
+
+.navbar-brand .text-secondary {
+  color: var(--secondary) !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary) !important;
+}
+
+/* --- Section Title (etiquetas de seção) ---
+   Justificativa: Etiquetas em amarelo destacam os títulos
+   e criam consistência visual */
+.section-title span {
+  background-color: var(--primary) !important;
+  color: var(--text-on-primary) !important;
+}
+
+/* --- Cards ---
+   Justificativa: Bordas superiores em amarelo criam
+   um toque de cor sem sobrecarregar */
+.card .border-top,
+.bg-light.border-top {
+  border-top-color: var(--primary) !important;
+}
+
+/* --- Ícones --- */
+.text-primary,
+i.text-primary,
+h4.text-primary,
+.fa.text-primary,
+.fas.text-primary,
+.far.text-primary {
+  color: var(--primary) !important;
+}
+
+/* --- Footer ---
+   Justificativa: Footer em azul escuro cria âncora visual
+   e fecha a página com profissionalismo */
+.bg-secondary .text-primary {
+  color: var(--primary) !important;
+}
+
+.bg-secondary a.text-white:hover {
+  color: var(--primary) !important;
+}
+
+/* --- Formulários ---
+   Justificativa: Campos de formulário em fundo amarelo
+   destacam as áreas de interação */
+.bg-primary input.form-control,
+.bg-primary select.custom-select {
+  border: 2px solid var(--primary-dark) !important;
+}
+
+.bg-primary input.form-control:focus,
+.bg-primary select.custom-select:focus {
+  border-color: var(--secondary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(30, 58, 95, 0.25) !important;
+}
+
+/* --- Badges --- */
+.badge-primary {
+  background-color: var(--primary) !important;
+  color: var(--text-on-primary) !important;
+}
+
+/* --- Team Section Social Icons ---
+   Justificativa: Ícones em amarelo no hover criam
+   interatividade visual */
+.team-social a:hover {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--text-on-primary) !important;
+}
+
+/* --- Testimonial Carousel --- */
+.owl-carousel .owl-dot.active span {
+  background-color: var(--primary) !important;
+}
+
+/* --- Back to Top Button --- */
+.back-to-top {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--text-on-primary) !important;
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+/* --- Dropdown Menu --- */
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item.active {
+  background-color: var(--primary) !important;
+  color: var(--text-on-primary) !important;
+}
+
+/* --- List Group --- */
+.list-group-item a:hover {
+  color: var(--primary) !important;
+}
+
+/* --- Card Footer Info --- */
+.card-footer .row .col-6 {
+  color: var(--text-body);
+}
+
+/* ============================================
+   AJUSTES DE LEGIBILIDADE E ACESSIBILIDADE
+   ============================================ */
+
+/* Garantir contraste adequado em fundos amarelos */
+.bg-primary .display-3,
+.bg-primary .display-4,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary h4 {
+  color: var(--text-on-primary) !important;
+  text-shadow: none;
+}
+
+/* Links no header amarelo */
+.bg-primary a.btn-secondary {
+  background-color: var(--secondary) !important;
+  color: var(--text-on-secondary) !important;
+}
+
+.bg-primary a.btn-secondary:hover {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* ============================================
+   EFEITOS E TRANSIÇÕES SUAVES
+   ============================================ */
+
+.btn-primary,
+.btn-secondary,
+.btn-outline-primary,
+a,
+.nav-link {
+  transition: all 0.3s ease;
+}
+
+/* ============================================
+   AJUSTES PARA O HEADER PRINCIPAL
+   ============================================ */
+
+/* Header com gradiente sutil para mais profundidade */
+.container-fluid.bg-primary.px-0.px-md-5.mb-5 {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+}
+
+/* Botão "Saiba Mais" no header */
+.bg-primary .btn-secondary {
+  background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+  color: #fff !important;
+}
+
+.bg-primary .btn-secondary:hover {
+  background-color: var(--secondary-light) !important;
+  border-color: var(--secondary-light) !important;
+}

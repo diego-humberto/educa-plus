@@ -1,0 +1,89 @@
+---
+interface Props {
+  sectionTitle?: string;
+  sectionHeading?: string;
+}
+
+const { sectionTitle = "Nossas Turmas", sectionHeading = "Turmas Para Seus Filhos" } = Astro.props;
+
+const classes = [
+  {
+    image: "/img/class-1.jpg",
+    title: "Aula de Desenho",
+    description: "Desenvolva a criatividade e expressão artística do seu filho através de técnicas de desenho e pintura adaptadas para cada idade.",
+    age: "3 - 6 Anos",
+    spots: "40 Vagas",
+    time: "08:00 - 10:00",
+    price: "R$ 290 / Mês",
+  },
+  {
+    image: "/img/class-2.jpg",
+    title: "Aprendizado de Idiomas",
+    description: "Introdução ao inglês de forma lúdica e divertida, preparando as crianças para um mundo globalizado desde cedo.",
+    age: "3 - 6 Anos",
+    spots: "40 Vagas",
+    time: "08:00 - 10:00",
+    price: "R$ 290 / Mês",
+  },
+  {
+    image: "/img/class-3.jpg",
+    title: "Ciências Básicas",
+    description: "Experimentos simples e divertidos que despertam a curiosidade científica e o amor pelo conhecimento nas crianças.",
+    age: "3 - 6 Anos",
+    spots: "40 Vagas",
+    time: "08:00 - 10:00",
+    price: "R$ 290 / Mês",
+  },
+];
+---
+
+<div class="container-fluid pt-5">
+  <div class="container">
+    <div class="text-center pb-2">
+      <p class="section-title px-5">
+        <span class="px-2">{sectionTitle}</span>
+      </p>
+      <h1 class="mb-4">{sectionHeading}</h1>
+    </div>
+    <div class="row">
+      {classes.map((cls) => (
+        <div class="col-lg-4 mb-5">
+          <div class="card border-0 bg-light shadow-sm pb-2">
+            <img class="card-img-top mb-2" src={cls.image} alt="" />
+            <div class="card-body text-center">
+              <h4 class="card-title">{cls.title}</h4>
+              <p class="card-text">{cls.description}</p>
+            </div>
+            <div class="card-footer bg-transparent py-4 px-5">
+              <div class="row border-bottom">
+                <div class="col-6 py-1 text-right border-right">
+                  <strong>Idade</strong>
+                </div>
+                <div class="col-6 py-1">{cls.age}</div>
+              </div>
+              <div class="row border-bottom">
+                <div class="col-6 py-1 text-right border-right">
+                  <strong>Vagas</strong>
+                </div>
+                <div class="col-6 py-1">{cls.spots}</div>
+              </div>
+              <div class="row border-bottom">
+                <div class="col-6 py-1 text-right border-right">
+                  <strong>Horário</strong>
+                </div>
+                <div class="col-6 py-1">{cls.time}</div>
+              </div>
+              <div class="row">
+                <div class="col-6 py-1 text-right border-right">
+                  <strong>Mensalidade</strong>
+                </div>
+                <div class="col-6 py-1">{cls.price}</div>
+              </div>
+            </div>
+            <a href="" class="btn btn-primary px-4 mx-auto mb-4">Inscreva-se</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
